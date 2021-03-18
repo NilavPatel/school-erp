@@ -1,0 +1,14 @@
+{
+  "name": "school-erp",
+  "version": "1.0.0",
+  "description": "School ERP backend",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "author": "nilav patel",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
