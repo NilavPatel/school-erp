@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 // GET list of all divisions.
 exports.division_list = function (req, res) {
     try {
-        Division.find().then((divisions) => {
+        Division.find().populate('classTeacher').then((divisions) => {
             return apiResponse.successResponseWithData(res, 'Success', divisions);
         });
     }
@@ -20,7 +20,7 @@ exports.division_detail = function (req, res) {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return apiResponse.successResponseWithData(res, 'Success', {});
         }
-        Division.findById(req.params.id).then((division) => {
+        Division.findById(req.params.id).populate('classTeacher').then((division) => {
             return apiResponse.successResponseWithData(res, 'Success', division);
         });
     }
@@ -85,7 +85,7 @@ exports.division_delete = function (req, res) {
             if (err) {
                 return apiResponse.errorResponse(res, err);
             }
-            return apiResponse.successResponseWithData(res, 'Division removed successfully', division._id);
+            return apiResponse.successResponseWithData(res, 'Division removed successfully', req.params.id);
         });
     }
     catch (err) {

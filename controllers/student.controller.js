@@ -11,7 +11,7 @@ exports.student_list = function (req, res) {
         });
     }
     catch (err) {
-        return apiResponse.ErrorResponse(res, err);
+        return apiResponse.errorResponse(res, err);
     }
 };
 
@@ -26,7 +26,7 @@ exports.student_detail = function (req, res) {
         });
     }
     catch (err) {
-        return apiResponse.ErrorResponse(res, err);
+        return apiResponse.errorResponse(res, err);
     }
 };
 
@@ -54,15 +54,15 @@ exports.student_create = function (req, res) {
             division: req.body.division
         });
 
-        student.save(req.params.id, student, {}, function (err) {
+        student.save(function (err) {
             if (err) {
-                return apiResponse.ErrorResponse(res, err);
+                return apiResponse.errorResponse(res, err);
             }
-            return apiResponse.successResponseWithData(res, 'Student added successfully', req.params.id);
+            return apiResponse.successResponseWithData(res, 'Student added successfully', student._id);
         });
     }
     catch (err) {
-        return apiResponse.ErrorResponse(res, err);
+        return apiResponse.errorResponse(res, err);
     }
 };
 
@@ -96,13 +96,13 @@ exports.student_update = function (req, res) {
 
         Student.findByIdAndUpdate(req.params.id, student, {}, function (err) {
             if (err) {
-                return apiResponse.ErrorResponse(res, err);
+                return apiResponse.errorResponse(res, err);
             }
             return apiResponse.successResponseWithData(res, 'Student updated successfully', req.params.id);
         });
     }
     catch (err) {
-        return apiResponse.ErrorResponse(res, err);
+        return apiResponse.errorResponse(res, err);
     }
 };
 
@@ -115,12 +115,12 @@ exports.student_delete = function (req, res) {
 
         Student.findByIdAndRemove(req.params.id, function (err) {
             if (err) {
-                return apiResponse.ErrorResponse(res, err);
+                return apiResponse.errorResponse(res, err);
             }
             return apiResponse.successResponseWithData(res, 'Student removed successfully', req.params.id);
         });
     }
     catch (err) {
-        return apiResponse.ErrorResponse(res, err);
+        return apiResponse.errorResponse(res, err);
     }
 };
