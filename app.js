@@ -1,5 +1,7 @@
 const express = require('express');
 var mongoose = require('mongoose');
+var cors = require("cors");
+
 const apiResponse = require('./helpers/apiResponses');
 var indexRouter = require('./routes/index.route');
 var loginRouter = require('./routes/login.route');
@@ -18,6 +20,10 @@ mongoose.connect(constants.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopol
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+//To allow cross-origin requests
+app.use(cors());
 
 // add all routers here
 app.use('/', indexRouter);
