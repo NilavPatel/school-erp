@@ -1,0 +1,438 @@
+{
+	"info": {
+		"_postman_id": "8e142202-d862-4a9f-9ac6-c4bf4a65ab40",
+		"name": "school-erp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "student",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/students",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/students/6062c29e6007dd2ff4fbe670",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"6062c29e6007dd2ff4fbe670"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Ann\",\r\n    \"middleName\": \"C\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"B+\",\r\n    \"phoneNumber1\": \"+91 123456789\",\r\n    \"phoneNumber2\": \"+91 123456789\",\r\n    \"addressLine1\": \"Test Apartment No. 10\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"New Jersey\",\r\n    \"pincode\": \"123456\",\r\n    \"state\": \"New Jersey\",\r\n    \"country\": \"USA\",\r\n    \"height\": 5,\r\n    \"weight\": 61,\r\n    \"division\": \"6062c1b26007dd2ff4fbe66f\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/students/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/students/delete/6062c29e6007dd2ff4fbe670",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"delete",
+								"6062c29e6007dd2ff4fbe670"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "staff",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/staffs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"staffs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/staffs/6062c1596007dd2ff4fbe66e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"staffs",
+								"6062c1596007dd2ff4fbe66e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"middleName\": \"A\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"A+\",\r\n    \"phoneNumber1\": \"123456789\",\r\n    \"phoneNumber2\": \"123456789\",\r\n    \"addressLine1\": \"123 Stark Avenue\",\r\n    \"addressLine2\": \"Near Test restaurant\",\r\n    \"landmark\": \"New york\",\r\n    \"city\": \"New york\",\r\n    \"pincode\": \"12345678\",\r\n    \"state\": \"New york\",\r\n    \"country\": \"USA\",\r\n    \"designation\": \"Teacher\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/staffs/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"staffs",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/staffs/delete/6062c1596007dd2ff4fbe66e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"staffs",
+								"delete",
+								"6062c1596007dd2ff4fbe66e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "division",
+			"item": [
+				{
+					"name": "get all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/divisions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"divisions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/divisions/6062c1b26007dd2ff4fbe66f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"divisions",
+								"6062c1b26007dd2ff4fbe66f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"divisionName\": \"1A\",\r\n    \"classTeacher\": \"6062c1596007dd2ff4fbe66e\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/divisions/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"divisions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/divisions/delete/6062c1b26007dd2ff4fbe66f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"divisions",
+								"delete",
+								"6062c1b26007dd2ff4fbe66f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

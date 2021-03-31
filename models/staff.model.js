@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const StaffSchema = new Schema({
+const staffSchema = new Schema({
     firstName: { type: String, required: [true, 'FirstName is required'] },
     middleName: { type: String, required: [true, 'MiddleName is required'] },
     lastName: { type: String, required: [true, 'LastName is required'] },
@@ -22,6 +22,8 @@ const StaffSchema = new Schema({
         default: 'Teacher',
         required: [true, 'Designation is required']
     }
-}, { timestamps: true });
+}, {
+    timestamps: true
+});
 
-module.exports = mongoose.model('Staff', StaffSchema);
+module.exports = mongoose.model('Staff', staffSchema);

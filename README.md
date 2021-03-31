@@ -15,3 +15,14 @@
 ## Other tools:
 - [nodemon@2.0.7](https://nodemon.io/)
   For server restart on file change
+
+## Postman collection
+- [Postman](https://www.postman.com/)
+- Use login api to get jwt token first
+- Replace jwt token in each request in Auth section
+
+## How to add new controller?
+- Add new model
+- Add new controller
+- Add new route
+- Register route in app.js file

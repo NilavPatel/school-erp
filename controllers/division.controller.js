@@ -5,9 +5,12 @@ var mongoose = require('mongoose');
 // GET list of all divisions.
 exports.division_list = function (req, res) {
     try {
-        Division.find().populate('classTeacher').then((divisions) => {
-            return apiResponse.successResponseWithData(res, 'Success', divisions);
-        });
+        Division.find()
+            .populate('classTeacher')
+            .populate("students")
+            .then((divisions) => {
+                return apiResponse.successResponseWithData(res, 'Success', divisions);
+            });
     }
     catch (err) {
         return apiResponse.errorResponse(res, err);
@@ -20,9 +23,12 @@ exports.division_detail = function (req, res) {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return apiResponse.successResponseWithData(res, 'Success', {});
         }
-        Division.findById(req.params.id).populate('classTeacher').then((division) => {
-            return apiResponse.successResponseWithData(res, 'Success', division);
-        });
+        Division.findById(req.params.id)
+            .populate('classTeacher')
+            .populate("students")
+            .then((division) => {
+                return apiResponse.successResponseWithData(res, 'Success', division);
+            });
     }
     catch (err) {
         return apiResponse.errorResponse(res, err);

@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 // GET list of all staffs.
 exports.staff_list = function (req, res) {
     try {
-        Staff.find().populate('division').then((staffs) => {
+        Staff.find().then((staffs) => {
             return apiResponse.successResponseWithData(res, 'Success', staffs);
         });
     }
@@ -21,7 +21,7 @@ exports.staff_detail = function (req, res) {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return apiResponse.successResponseWithData(res, 'Success', {});
         }
-        Staff.findById(req.params.id).populate('division').then((staff) => {
+        Staff.findById(req.params.id).then((staff) => {
             return apiResponse.successResponseWithData(res, 'Success', staff);
         });
     }

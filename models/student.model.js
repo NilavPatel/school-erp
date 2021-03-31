@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const StudentSchema = new Schema({
+const studentSchema = new Schema({
     firstName: { type: String, required: [true, 'FirstName is required'] },
     middleName: { type: String, required: [true, 'MiddleName is required'] },
     lastName: { type: String, required: [true, 'LastName is required'] },
@@ -21,4 +21,4 @@ const StudentSchema = new Schema({
     division: { type: Schema.ObjectId, ref: 'Division', required: [true, 'Division is required'] }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Student', StudentSchema);
+module.exports = mongoose.model('Student', studentSchema);
