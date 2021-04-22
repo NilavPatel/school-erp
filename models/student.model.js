@@ -2,6 +2,13 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const studentSchema = new Schema({
+    emailId: {
+        type: String,
+        required: [true, 'EmailId is required'],
+        unique: true,
+        trim: true,
+        match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+    },
     firstName: { type: String, required: [true, 'FirstName is required'] },
     middleName: { type: String, required: [true, 'MiddleName is required'] },
     lastName: { type: String, required: [true, 'LastName is required'] },
@@ -19,6 +26,8 @@ const studentSchema = new Schema({
     height: { type: Number, required: [true, 'Height is required'] },
     weight: { type: Number, required: [true, 'Weight is required'] },
     division: { type: Schema.ObjectId, ref: 'Division', required: [true, 'Division is required'] }
-}, { timestamps: true });
+}, {
+    timestamps: true
+});
 
 module.exports = mongoose.model('Student', studentSchema);

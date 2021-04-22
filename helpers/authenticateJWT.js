@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { constants } = require("../helpers/constants");
+const apiResponse = require('../helpers/apiResponses');
 
 const authenticateJWT = (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -9,14 +10,14 @@ const authenticateJWT = (req, res, next) => {
 
         jwt.verify(token, constants.accessTokenSecret, (err, user) => {
             if (err) {
-                return res.sendStatus(403);
+                return apiResponse.unauthorizedResponse(res, "Invalid credentials");
             }
-
+            // if token is valid then add user details into req and continue
             req.user = user;
             next();
         });
     } else {
-        res.sendStatus(401);
+        return apiResponse.unauthorizedResponse(res, "Invalid credentials");
     }
 };
 

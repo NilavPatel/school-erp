@@ -21,8 +21,9 @@ exports.division_list = function (req, res) {
 exports.division_detail = function (req, res) {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-            return apiResponse.successResponseWithData(res, 'Success', {});
+            return apiResponse.validationErrorWithData(res, "Invalid Error.", "Invalid ID");
         }
+        
         Division.findById(req.params.id)
             .populate('classTeacher')
             .populate("students")

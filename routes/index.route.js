@@ -3,7 +3,7 @@ const apiResponse = require('../helpers/apiResponses');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-    return apiResponse.successResponse(res, "Welcome to School-ERP backend");
+    return apiResponse.successResponse(res, "Welcome to School-ERP backend asdasd");
 });
 
 module.exports = router;

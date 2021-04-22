@@ -19,8 +19,9 @@ exports.student_list = function (req, res) {
 exports.student_detail = function (req, res) {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-            return apiResponse.successResponseWithData(res, 'Success', {});
+            return apiResponse.validationErrorWithData(res, "Invalid Error.", "Invalid ID");
         }
+
         Student.findById(req.params.id).populate('division').then((student) => {
             return apiResponse.successResponseWithData(res, 'Success', student);
         });
@@ -35,6 +36,7 @@ exports.student_create = function (req, res) {
     try {
 
         var student = new Student({
+            emailId: req.body.emailId,
             firstName: req.body.firstName,
             middleName: req.body.middleName,
             lastName: req.body.lastName,
@@ -75,6 +77,7 @@ exports.student_update = function (req, res) {
 
         var student = new Student({
             _id: req.params.id,
+            emailId: req.body.emailId,
             firstName: req.body.firstName,
             middleName: req.body.middleName,
             lastName: req.body.lastName,

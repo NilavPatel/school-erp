@@ -19,8 +19,9 @@ exports.staff_list = function (req, res) {
 exports.staff_detail = function (req, res) {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-            return apiResponse.successResponseWithData(res, 'Success', {});
+            return apiResponse.validationErrorWithData(res, "Invalid Error.", "Invalid ID");
         }
+        
         Staff.findById(req.params.id).then((staff) => {
             return apiResponse.successResponseWithData(res, 'Success', staff);
         });
@@ -34,6 +35,7 @@ exports.staff_detail = function (req, res) {
 exports.staff_create = function (req, res) {
     try {
         var staff = new Staff({
+            emailId: req.body.emailId,
             firstName: req.body.firstName,
             middleName: req.body.middleName,
             lastName: req.body.lastName,
@@ -72,6 +74,7 @@ exports.staff_update = function (req, res) {
 
         var staff = new Staff({
             _id: req.params.id,
+            emailId: req.body.emailId,
             firstName: req.body.firstName,
             middleName: req.body.middleName,
             lastName: req.body.lastName,

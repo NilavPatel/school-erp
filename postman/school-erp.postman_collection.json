@@ -9,6 +9,87 @@
 			"name": "student",
 			"item": [
 				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailId\":\"Ann@doe.com\",\r\n    \"firstName\": \"Ann\",\r\n    \"middleName\": \"C\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"B+\",\r\n    \"phoneNumber1\": \"+91 123456789\",\r\n    \"phoneNumber2\": \"+91 123456789\",\r\n    \"addressLine1\": \"Test Apartment No. 10\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"New Jersey\",\r\n    \"pincode\": \"123456\",\r\n    \"state\": \"New Jersey\",\r\n    \"country\": \"USA\",\r\n    \"height\": 5,\r\n    \"weight\": 61,\r\n    \"division\": \"6081148d9d53f22b98a42135\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/students/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailId\":\"Ann@doe.com\",\r\n    \"firstName\": \"Ann 1\",\r\n    \"middleName\": \"C\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"B+\",\r\n    \"phoneNumber1\": \"+91 123456789\",\r\n    \"phoneNumber2\": \"+91 123456789\",\r\n    \"addressLine1\": \"Test Apartment No. 10\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"New Jersey\",\r\n    \"pincode\": \"123456\",\r\n    \"state\": \"New Jersey\",\r\n    \"country\": \"USA\",\r\n    \"height\": 5,\r\n    \"weight\": 61,\r\n    \"division\": \"6062c1b26007dd2ff4fbe66f\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/students/update/6081149f9d53f22b98a42136",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"students",
+								"update",
+								"6081149f9d53f22b98a42136"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "get all",
 					"request": {
 						"auth": {
@@ -68,46 +149,6 @@
 					"response": []
 				},
 				{
-					"name": "create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"Ann\",\r\n    \"middleName\": \"C\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"B+\",\r\n    \"phoneNumber1\": \"+91 123456789\",\r\n    \"phoneNumber2\": \"+91 123456789\",\r\n    \"addressLine1\": \"Test Apartment No. 10\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"New Jersey\",\r\n    \"pincode\": \"123456\",\r\n    \"state\": \"New Jersey\",\r\n    \"country\": \"USA\",\r\n    \"height\": 5,\r\n    \"weight\": 61,\r\n    \"division\": \"6062c1b26007dd2ff4fbe66f\"\r\n}"
-						},
-						"url": {
-							"raw": "http://localhost:3000/students/create",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"students",
-								"create"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "delete",
 					"request": {
 						"auth": {
@@ -143,6 +184,87 @@
 		{
 			"name": "staff",
 			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE5MDcwODk0fQ.nclnDH80qmFO7_93AoSenjcp_qeZt3UK9a3KkS67kBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailId\":\"john@doe.com\",\r\n    \"firstName\": \"John\",\r\n    \"middleName\": \"A\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"A+\",\r\n    \"phoneNumber1\": \"123456789\",\r\n    \"phoneNumber2\": \"123456789\",\r\n    \"addressLine1\": \"123 Stark Avenue\",\r\n    \"addressLine2\": \"Near Test restaurant\",\r\n    \"landmark\": \"New york\",\r\n    \"city\": \"New york\",\r\n    \"pincode\": \"12345678\",\r\n    \"state\": \"New york\",\r\n    \"country\": \"USA\",\r\n    \"designation\": \"Teacher\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/staffs/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"staffs",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE5MDcwODk0fQ.nclnDH80qmFO7_93AoSenjcp_qeZt3UK9a3KkS67kBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailId\":\"john@doe.com\",\r\n    \"firstName\": \"John\",\r\n    \"middleName\": \"A\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"A+\",\r\n    \"phoneNumber1\": \"123456789\",\r\n    \"phoneNumber2\": \"123456789\",\r\n    \"addressLine1\": \"123 Stark Avenue\",\r\n    \"addressLine2\": \"Near Test restaurant\",\r\n    \"landmark\": \"New york\",\r\n    \"city\": \"New york\",\r\n    \"pincode\": \"12345678\",\r\n    \"state\": \"New york\",\r\n    \"country\": \"USA\",\r\n    \"designation\": \"Teacher\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/staffs/update/6081147f9d53f22b98a42134",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"staffs",
+								"update",
+								"6081147f9d53f22b98a42134"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "get all",
 					"request": {
@@ -203,46 +325,6 @@
 					"response": []
 				},
 				{
-					"name": "create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"middleName\": \"A\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"A+\",\r\n    \"phoneNumber1\": \"123456789\",\r\n    \"phoneNumber2\": \"123456789\",\r\n    \"addressLine1\": \"123 Stark Avenue\",\r\n    \"addressLine2\": \"Near Test restaurant\",\r\n    \"landmark\": \"New york\",\r\n    \"city\": \"New york\",\r\n    \"pincode\": \"12345678\",\r\n    \"state\": \"New york\",\r\n    \"country\": \"USA\",\r\n    \"designation\": \"Teacher\"\r\n}"
-						},
-						"url": {
-							"raw": "http://localhost:3000/staffs/create",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"staffs",
-								"create"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "delete",
 					"request": {
 						"auth": {
@@ -278,6 +360,87 @@
 		{
 			"name": "division",
 			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"divisionName\": \"1A\",\r\n    \"classTeacher\": \"6062c1596007dd2ff4fbe66e\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/divisions/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"divisions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"divisionName\": \"1A\",\r\n    \"classTeacher\": \"6062c1596007dd2ff4fbe66e\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/divisions/update/6081148d9d53f22b98a42135",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"divisions",
+								"update",
+								"6081148d9d53f22b98a42135"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "get all",
 					"request": {
@@ -332,46 +495,6 @@
 							"path": [
 								"divisions",
 								"6062c1b26007dd2ff4fbe66f"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "create",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXJuYW1lIiwiaWF0IjoxNjE3MDgzNzgyfQ.udXZRe2GrUmg195sDkv_29LFeAbXieURrAyIhCmmfUM",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"divisionName\": \"1A\",\r\n    \"classTeacher\": \"6062c1596007dd2ff4fbe66e\"\r\n}"
-						},
-						"url": {
-							"raw": "http://localhost:3000/divisions/create",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"divisions",
-								"create"
 							]
 						}
 					},

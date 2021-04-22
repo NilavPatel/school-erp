@@ -26,3 +26,6 @@
 - Add new controller
 - Add new route
 - Register route in app.js file
+
+## For production use pm2
+- [pm2](https://pm2.keymetrics.io/)
