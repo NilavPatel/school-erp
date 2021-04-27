@@ -1,4 +1,5 @@
 const Division = require('../models/division.model');
+const Staff = require('../models/staff.model');
 const apiResponse = require('../helpers/apiResponses');
 var mongoose = require('mongoose');
 
@@ -23,7 +24,7 @@ exports.division_detail = function (req, res) {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return apiResponse.validationErrorWithData(res, "Invalid Error.", "Invalid ID");
         }
-        
+
         Division.findById(req.params.id)
             .populate('classTeacher')
             .populate("students")
@@ -37,8 +38,12 @@ exports.division_detail = function (req, res) {
 };
 
 // POST Handle division create.
-exports.division_create = function (req, res) {
+exports.division_create = async function (req, res) {
     try {
+
+        var errorMessage = await validateClassTeacher(req, res);
+        if (errorMessage) return errorMessage;
+
         var division = new Division({
             divisionName: req.body.divisionName,
             classTeacher: req.body.classTeacher
@@ -57,11 +62,14 @@ exports.division_create = function (req, res) {
 };
 
 // PUT Handle division update.
-exports.division_update = function (req, res) {
+exports.division_update = async function (req, res) {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return apiResponse.validationErrorWithData(res, "Invalid Error.", "Invalid ID");
         }
+
+        var errorMessage = await validateClassTeacher(req, res);
+        if (errorMessage) return errorMessage;
 
         var division = new Division({
             _id: req.params.id,
@@ -99,3 +107,19 @@ exports.division_delete = function (req, res) {
         return apiResponse.errorResponse(res, err);
     }
 };
+
+
+validateClassTeacher = async function (req, res) {
+    if (!req.body.classTeacher) {
+        return apiResponse.validationErrorWithData(res, "Staff is required", {});
+    }
+
+    var classTeacher = await Staff.findById(req.body.classTeacher);
+    if (!classTeacher) {
+        return apiResponse.validationErrorWithData(res, "Staff not found", req.body.classTeacher);
+    }
+    if (classTeacher && classTeacher.designation != 'Teacher') {
+        return apiResponse.validationErrorWithData(res, "Staff must be a Teacher", req.body.classTeacher);
+    }
+    return null;
+}

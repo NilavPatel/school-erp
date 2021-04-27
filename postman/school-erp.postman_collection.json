@@ -31,7 +31,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"emailId\":\"Ann@doe.com\",\r\n    \"firstName\": \"Ann\",\r\n    \"middleName\": \"C\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"B+\",\r\n    \"phoneNumber1\": \"+91 123456789\",\r\n    \"phoneNumber2\": \"+91 123456789\",\r\n    \"addressLine1\": \"Test Apartment No. 10\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"New Jersey\",\r\n    \"pincode\": \"123456\",\r\n    \"state\": \"New Jersey\",\r\n    \"country\": \"USA\",\r\n    \"height\": 5,\r\n    \"weight\": 61,\r\n    \"division\": \"6081148d9d53f22b98a42135\"\r\n}"
+							"raw": "{\r\n    \"emailId\": \"7@doe.com\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"Ann\",\r\n    \"middleName\": \"C\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"B+\",\r\n    \"phoneNumber1\": \"+91 123456789\",\r\n    \"phoneNumber2\": \"+91 123456789\",\r\n    \"addressLine1\": \"Test Apartment No. 10\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"New Jersey\",\r\n    \"pincode\": \"123456\",\r\n    \"state\": \"New Jersey\",\r\n    \"country\": \"USA\",\r\n    \"height\": 5,\r\n    \"weight\": 61,\r\n    \"division\": \"6081148d9d53f22b98a42135\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/students/create",
@@ -71,7 +71,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"emailId\":\"Ann@doe.com\",\r\n    \"firstName\": \"Ann 1\",\r\n    \"middleName\": \"C\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"B+\",\r\n    \"phoneNumber1\": \"+91 123456789\",\r\n    \"phoneNumber2\": \"+91 123456789\",\r\n    \"addressLine1\": \"Test Apartment No. 10\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"New Jersey\",\r\n    \"pincode\": \"123456\",\r\n    \"state\": \"New Jersey\",\r\n    \"country\": \"USA\",\r\n    \"height\": 5,\r\n    \"weight\": 61,\r\n    \"division\": \"6062c1b26007dd2ff4fbe66f\"\r\n}"
+							"raw": "{\r\n    \"emailId\":\"Ann@doe.com\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"Ann 1\",\r\n    \"middleName\": \"C\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"B+\",\r\n    \"phoneNumber1\": \"+91 123456789\",\r\n    \"phoneNumber2\": \"+91 123456789\",\r\n    \"addressLine1\": \"Test Apartment No. 10\",\r\n    \"addressLine2\": \"\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"New Jersey\",\r\n    \"pincode\": \"123456\",\r\n    \"state\": \"New Jersey\",\r\n    \"country\": \"USA\",\r\n    \"height\": 5,\r\n    \"weight\": 61,\r\n    \"division\": \"6062c1b26007dd2ff4fbe66f\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/students/update/6081149f9d53f22b98a42136",
@@ -207,7 +207,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"emailId\":\"john@doe.com\",\r\n    \"firstName\": \"John\",\r\n    \"middleName\": \"A\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"A+\",\r\n    \"phoneNumber1\": \"123456789\",\r\n    \"phoneNumber2\": \"123456789\",\r\n    \"addressLine1\": \"123 Stark Avenue\",\r\n    \"addressLine2\": \"Near Test restaurant\",\r\n    \"landmark\": \"New york\",\r\n    \"city\": \"New york\",\r\n    \"pincode\": \"12345678\",\r\n    \"state\": \"New york\",\r\n    \"country\": \"USA\",\r\n    \"designation\": \"Teacher\"\r\n}"
+							"raw": "{\r\n    \"emailId\":\"6@test.com\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"John\",\r\n    \"middleName\": \"A\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"A+\",\r\n    \"phoneNumber1\": \"123456789\",\r\n    \"phoneNumber2\": \"123456789\",\r\n    \"addressLine1\": \"123 Stark Avenue\",\r\n    \"addressLine2\": \"Near Test restaurant\",\r\n    \"landmark\": \"New york\",\r\n    \"city\": \"New york\",\r\n    \"pincode\": \"12345678\",\r\n    \"state\": \"New york\",\r\n    \"country\": \"USA\",\r\n    \"designation\": \"Teacher\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/staffs/create",
@@ -247,7 +247,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"emailId\":\"john@doe.com\",\r\n    \"firstName\": \"John\",\r\n    \"middleName\": \"A\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"A+\",\r\n    \"phoneNumber1\": \"123456789\",\r\n    \"phoneNumber2\": \"123456789\",\r\n    \"addressLine1\": \"123 Stark Avenue\",\r\n    \"addressLine2\": \"Near Test restaurant\",\r\n    \"landmark\": \"New york\",\r\n    \"city\": \"New york\",\r\n    \"pincode\": \"12345678\",\r\n    \"state\": \"New york\",\r\n    \"country\": \"USA\",\r\n    \"designation\": \"Teacher\"\r\n}"
+							"raw": "{\r\n    \"emailId\":\"john@doe.com\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"John\",\r\n    \"middleName\": \"A\",\r\n    \"lastName\": \"Doe\",\r\n    \"birthDate\": \"28 October 1992\",\r\n    \"bloodGroup\": \"A+\",\r\n    \"phoneNumber1\": \"123456789\",\r\n    \"phoneNumber2\": \"123456789\",\r\n    \"addressLine1\": \"123 Stark Avenue\",\r\n    \"addressLine2\": \"Near Test restaurant\",\r\n    \"landmark\": \"New york\",\r\n    \"city\": \"New york\",\r\n    \"pincode\": \"12345678\",\r\n    \"state\": \"New york\",\r\n    \"country\": \"USA\",\r\n    \"designation\": \"Teacher\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/staffs/update/6081147f9d53f22b98a42134",
@@ -540,7 +540,17 @@
 					"name": "login",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"\",\r\n    \"password\":\"password\",\r\n    \"userType\":\"1\"\r\n}"
+						},
 						"url": {
 							"raw": "http://localhost:3000/login",
 							"protocol": "http",

@@ -37,6 +37,7 @@ exports.student_create = function (req, res) {
 
         var student = new Student({
             emailId: req.body.emailId,
+            password: req.body.password,
             firstName: req.body.firstName,
             middleName: req.body.middleName,
             lastName: req.body.lastName,
@@ -78,6 +79,7 @@ exports.student_update = function (req, res) {
         var student = new Student({
             _id: req.params.id,
             emailId: req.body.emailId,
+            password: req.body.password,
             firstName: req.body.firstName,
             middleName: req.body.middleName,
             lastName: req.body.lastName,
