@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var authenticateJWT = require('../helpers/authenticateJWT');
-var division_controller = require('../controllers/division.controller');
+var authenticateJWT = require('../../helpers/authenticateJWT');
+var division_controller = require('./division.controller');
 
 // GET list of all divisions.
 router.get('/', authenticateJWT, division_controller.division_list);

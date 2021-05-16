@@ -1,13 +1,13 @@
 
-const Staff = require('../models/staff.model');
-const apiResponse = require('../helpers/apiResponses');
+const Student = require('./student.model');
+const apiResponse = require('../../helpers/apiResponses');
 var mongoose = require('mongoose');
 
-// GET list of all staffs.
-exports.staff_list = function (req, res) {
+// GET list of all students.
+exports.student_list = function (req, res) {
     try {
-        Staff.find().then((staffs) => {
-            return apiResponse.successResponseWithData(res, 'Success', staffs);
+        Student.find().populate('division').then((students) => {
+            return apiResponse.successResponseWithData(res, 'Success', students);
         });
     }
     catch (err) {
@@ -15,15 +15,15 @@ exports.staff_list = function (req, res) {
     }
 };
 
-// GET detail for a specific staff.
-exports.staff_detail = function (req, res) {
+// GET detail for a specific student.
+exports.student_detail = function (req, res) {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return apiResponse.validationErrorWithData(res, "Invalid Error.", "Invalid ID");
         }
-        
-        Staff.findById(req.params.id).then((staff) => {
-            return apiResponse.successResponseWithData(res, 'Success', staff);
+
+        Student.findById(req.params.id).populate('division').then((student) => {
+            return apiResponse.successResponseWithData(res, 'Success', student);
         });
     }
     catch (err) {
@@ -31,10 +31,11 @@ exports.staff_detail = function (req, res) {
     }
 };
 
-// POST Handle staff create.
-exports.staff_create = function (req, res) {
+// POST Handle student create.
+exports.student_create = function (req, res) {
     try {
-        var staff = new Staff({
+
+        var student = new Student({
             emailId: req.body.emailId,
             password: req.body.password,
             firstName: req.body.firstName,
@@ -51,14 +52,16 @@ exports.staff_create = function (req, res) {
             pincode: req.body.pincode,
             state: req.body.state,
             country: req.body.country,
-            designation: req.body.designation
+            height: req.body.height,
+            weight: req.body.weight,
+            division: req.body.division
         });
 
-        staff.save(function (err) {
+        student.save(function (err) {
             if (err) {
                 return apiResponse.errorResponse(res, err);
             }
-            return apiResponse.successResponseWithData(res, 'Staff added successfully', staff._id);
+            return apiResponse.successResponseWithData(res, 'Student added successfully', student._id);
         });
     }
     catch (err) {
@@ -66,14 +69,14 @@ exports.staff_create = function (req, res) {
     }
 };
 
-// PUT Handle staff update.
-exports.staff_update = function (req, res) {
+// PUT Handle student update.
+exports.student_update = function (req, res) {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return apiResponse.validationErrorWithData(res, "Invalid Error.", "Invalid ID");
         }
 
-        var staff = new Staff({
+        var student = new Student({
             _id: req.params.id,
             emailId: req.body.emailId,
             password: req.body.password,
@@ -91,14 +94,16 @@ exports.staff_update = function (req, res) {
             pincode: req.body.pincode,
             state: req.body.state,
             country: req.body.country,
-            designation: req.body.designation
+            height: req.body.height,
+            weight: req.body.weight,
+            division: req.body.division
         });
 
-        Staff.findByIdAndUpdate(req.params.id, staff, {}, function (err) {
+        Student.findByIdAndUpdate(req.params.id, student, {}, function (err) {
             if (err) {
                 return apiResponse.errorResponse(res, err);
             }
-            return apiResponse.successResponseWithData(res, 'Staff updated successfully', req.params.id);
+            return apiResponse.successResponseWithData(res, 'Student updated successfully', req.params.id);
         });
     }
     catch (err) {
@@ -106,18 +111,18 @@ exports.staff_update = function (req, res) {
     }
 };
 
-// DELETE Handle staff remove.
-exports.staff_delete = function (req, res) {
+// DELETE Handle student remove.
+exports.student_delete = function (req, res) {
     try {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return apiResponse.validationErrorWithData(res, "Invalid Error.", "Invalid ID");
         }
 
-        Staff.findByIdAndRemove(req.params.id, function (err) {
+        Student.findByIdAndRemove(req.params.id, function (err) {
             if (err) {
                 return apiResponse.errorResponse(res, err);
             }
-            return apiResponse.successResponseWithData(res, 'Staff removed successfully', req.params.id);
+            return apiResponse.successResponseWithData(res, 'Student removed successfully', req.params.id);
         });
     }
     catch (err) {

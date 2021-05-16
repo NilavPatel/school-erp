@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
-const { constants } = require("../helpers/constants");
-const apiResponse = require('../helpers/apiResponses');
-const Staff = require('../models/staff.model');
-const Student = require('../models/student.model');
+const { constants } = require("../../helpers/constants");
+const apiResponse = require('../../helpers/apiResponses');
+const Staff = require('../staff/staff.model');
+const Student = require('../student/student.model');
 
 exports.login = function (req, res) {
     try {

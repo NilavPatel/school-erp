@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var authenticateJWT = require('../helpers/authenticateJWT');
+var authenticateJWT = require('../../helpers/authenticateJWT');
 
-var staff_controller = require('../controllers/staff.controller');
+var staff_controller = require('./staff.controller');
 
 // GET list of all staffs.
 router.get('/', authenticateJWT, staff_controller.staff_list);

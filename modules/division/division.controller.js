@@ -1,6 +1,6 @@
-const Division = require('../models/division.model');
-const Staff = require('../models/staff.model');
-const apiResponse = require('../helpers/apiResponses');
+const Division = require('./division.model');
+const Staff = require('../staff/staff.model');
+const apiResponse = require('../../helpers/apiResponses');
 var mongoose = require('mongoose');
 
 // GET list of all divisions.
