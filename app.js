@@ -3,11 +3,8 @@ var mongoose = require("mongoose");
 var cors = require("cors");
 
 const apiResponse = require("./helpers/apiResponses");
-var indexRouter = require("./routes/index.route");
-var loginRouter = require("./modules/user/login.route");
-var studentRouter = require("./modules/student/student.route");
-var divisionRouter = require("./modules/division/division.route");
-var staffRouter = require("./modules/staff/staff.route");
+var routerService = require("./routes/router.service");
+
 const { constants } = require("./helpers/constants");
 
 // MongoDB connection
@@ -31,12 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 //To allow cross-origin requests
 app.use(cors());
 
-// add all routers here
-app.use("/", indexRouter);
-app.use("/login", loginRouter);
-app.use("/students", studentRouter);
-app.use("/divisions", divisionRouter);
-app.use("/staffs", staffRouter);
+routerService.registerRoutes(app);
 
 // throw 404 if URL not found
 app.all("*", function (req, res) {
